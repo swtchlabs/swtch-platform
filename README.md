@@ -7,8 +7,12 @@ The SWTCH WhitePaper provides a background into the problem space and our potent
 
 ## SWTCH Protocol Specification
 The SWTCH Protocol specification provides the protocol smart contracts design.
-- [Protocol](./protocol/Index.md)
+- [Protocol Documentation](./protocol/Index.md)
+- [Protocol]([./protocol/Index.md](https://github.com/swtchlabs/swtch-protocol))
 
 ## SWTCH SDK Specification
-The SWTCH SDK specification provides the interfaces to the SWTCH Protocol for use in Rust, Python, TypeScript programming environments.
-- [SDKs](./sdk/Index.md)
+The SWTCH SDK specification provides the interfaces to the SWTCH Protocol for use in Rust, Python, and TypeScript programming environments.
+- [SDK Documentation](./sdk/Index.md)
+- [Rust SDK](https://github.com/swtchlabs/swtch-rs)
+- [Python SDK](https://github.com/swtchlabs/swtch-py)
+- [TypeScript SDK](https://github.com/swtchlabs/swtch-ts)
