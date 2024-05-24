@@ -1,5 +1,5 @@
 # SWTCH Platform Documentation
-SWTCH Platform Documentation provides the WhitePaper and specifications or the SWTCH Protocol and SWTCH SDK.
+SWTCH Platform Documentation provides the WhitePaper and specifications for the SWTCH Protocol and SWTCH SDK.
 
 ## SWTCH WhitePaper
 The SWTCH WhitePaper provides a background into the problem space and our potential solutions.
