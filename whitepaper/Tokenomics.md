@@ -24,6 +24,7 @@ Token distribution is managed by the following protocol:
 ## Work Rewards
 - Submit Work: Operators submit work to the protocol in the form of a Work Order for each service provided. Users can start a payment service with an operator in the form of Subscription, Payment Channel, Bi-Directional, or Escrow. The Work Order is verified by the SWTCH Protocol.
 - Withdraw Fees: Operators can withdraw fees from the SWTCH DAO for the services rendered. These fees are collected by the SWTCH Protocol and held until the operator withdraws their earnings.
+- Performance-Based Reward Distribution: If an operator completes only part of their assigned workloads (e.g., 8 out of 10), the operator is entitled to a proportionate share of the fees (80%). The remaining rewards (20%) are sent to the SWTCH DAO Treasury. This ensures that any remaining rewards from operators who provide subpar or intermittent services are redirected to the Treasury.
 
 ## WorkOrder Specification
 A WorkOrder is a structured record that details the type of service provided, the workloads assigned and completed, and the operator's performance. It ensures transparency and accountability in the service operations and allows for proper fee distribution based on the completion rate.
