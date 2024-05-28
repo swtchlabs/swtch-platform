@@ -97,3 +97,48 @@ SWTCH uses AES (Advanced Encryption Standard), ChaCha20, and XChaCha20 cryptogra
 - Key Size: 256 bits
 - Nonce Size: 192 bits
 - Usage: XChaCha20 extends ChaCha20 to support a larger nonce size, beneficial for applications requiring non-repeating nonces over a greater number of messages without frequent re-keying. This makes it suitable for high-volume applications or situations where unique nonces cannot be practically guaranteed. XChaCha20 is used in various cryptographic libraries and applications focused on privacy and security.
+
+## Verifiable Proof of Service (VPoS)
+At SWTCH, we are proposing a new proof system to manage the state of services in payment channels, termed "Verifiable Proof of Service" (VPoS). VPoS enables decentralized service indexing and verification.
+
+#### Benefits of VPoS
+- Settlement Layer for Decentralized Services: Provides a secure and transparent mechanism for settling payments for decentralized services.
+- Service Provision Verification: Allows for proving the provision of services within a decentralized infrastructure.
+- Decentralized Service Index: Maintains a public index of decentralized services, enhancing discoverability and trust.
+
+Verifiable services align with the broader trend of verifiable credentials and self-sovereign identity systems.
+
+#### Proposed Proof System
+Verifiable proof is established by registering an existing service with an identity or wallet.
+
+###### Verifiable Service Components
+- On-Chain Smart Contract Protocol: Manages service registration, verification, and transactions.
+- API SDK Workload Execution: Facilitates integration of the service with the SWTCH protocol.
+- Off-Chain Submit Workload: Handles the submission and logging of workloads.
+- Service Reputation Ratio: Computed as the ratio of completed workloads to total workloads.
+
+#### Use Case Actors
+There are two primary actors within this proof system:
+
+1. User of the Verifiable Service: Utilizes the services provided by the operator.
+2. Verifiable Service Operator: Provides and maintains the services.
+
+###### Verifiable Service Operator Responsibilities
+- Create an API Service: Develop the service to be provided.
+- Register API Service, Methods, and Pricing: Use the SWTCH Protocol to register the service on their preferred network.
+- Integrate the SWTCH SDK: Embed the SDK into the API service endpoints.
+- Accept Verified Encrypted Payloads: Process payloads from users at the API service endpoints.
+- Workload Log Commitment: Write each payload to disk as a Workload Log Commitment.
+Commit Proofs to SWTCH Protocol: Use the SWTCH SDK to submit proofs to the Service Payment Channel.
+- Fee and Reward Processing: The SWTCH Protocol verifies the authenticity of commitments and transfers the earned fees and rewards to the operator in SWTCH tokens.
+
+###### Decentralized Service Registration
+- Decentralized Registration: Services (e.g., messaging, storage, compute, AI agent services) can be registered without relying on a central authority.
+- Service Indexing and Verification: Indexing allows efficient discovery and access, while verification ensures validity and trustworthiness.
+- Decentralized Settlement Layer: Handles transactions related to service access, facilitating payments, resource allocation, and other settlement processes.
+
+## SDKs for Integration
+Developer Tools: SDKs for Rust, Python, and TypeScript are available, allowing developers to seamlessly integrate the proposed system into existing applications.
+
+## Overall Implications
+Verifiable Proof of Service is a comprehensive solution for managing decentralized services. By combining registration, verification, settlement, and developer tools, VPoS aims to enhance the overall ecosystem, providing transparency, security, and efficiency.
