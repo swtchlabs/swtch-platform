@@ -25,6 +25,46 @@ Token distribution is managed by the following protocol:
 - Submit Work: Operators submit work to the protocol in the form of a Work Order for each service provided. Users can start a payment service with an operator in the form of Subscription, Payment Channel, Bi-Directional, or Escrow. The Work Order is verified by the SWTCH Protocol.
 - Withdraw Fees: Operators can withdraw fees from the SWTCH DAO for the services rendered. These fees are collected by the SWTCH Protocol and held until the operator withdraws their earnings.
 
+## WorkOrder Specification
+A WorkOrder is a structured record that details the type of service provided, the workloads assigned and completed, and the operator's performance. It ensures transparency and accountability in the service operations and allows for proper fee distribution based on the completion rate.
+
+#### WorkOrder Structure
+- Service Type
+  - Definition: The type of service being provided.
+  - Values: Payment Channel, Subscription, Bi-Directional, Escrow. 
+- Workloads Assigned
+  - Definition: The total number of workloads assigned to the service operator.
+  - Type: Integer.
+- Workloads Completed
+  - Definition: The total number of workloads completed by the service operator.
+  - Type: Integer.
+- Completion Rate
+  - Definition: The ratio of completed workloads to assigned workloads, used to determine the percentage of fees the operator is entitled to.
+  - Type: Float (calculated as Workloads Completed / Workloads Assigned).
+- Fee Entitlement
+  - Definition: The percentage of fees the operator is entitled to based on the completion rate.
+  - Type: Float (same as Completion Rate).
+- Fee Refund
+  - Definition: The percentage of fees subject to refund based on incomplete workloads.
+  - Type: Float (calculated as 1 - Completion Rate).
+- Timestamp
+  - Definition: The timestamp when the WorkOrder was created.
+  - Type: DateTime.
+- Signature
+- Definition: A digital signature of the operator, verifying the authenticity and accuracy of the WorkOrder.
+- Type: String (digital signature).
+
+#### WorkOrder Submission
+The final WorkOrder, after all workloads are completed, should be submitted to the protocol for fee distribution.
+
+- Steps:
+  1. Track Workloads: Each time a workload is completed, it is recorded.
+  2. Create Final WorkOrder: After completing all workloads, the operator creates the final WorkOrder, summarizing the assigned and completed workloads.
+  3. Sign the WorkOrder: The operator signs the WorkOrder with their private key.
+  4. Submit WorkOrder: The signed WorkOrder is submitted to the protocol submit work function.
+
+By following this WorkOrder specification, the SWTCH protocol ensures fair and transparent compensation for service operators based on their performance, promoting accountability and efficiency in service delivery.
+
 ## Governance
 The SWTCH governance model empowers token holders to influence the direction and development of the SWTCH Platform. Key aspects of this governance model include voting weight, voting mechanics, proposal costs, and the implementation of approved proposals.
 
