@@ -10,6 +10,7 @@ The document covers:
 - [Identity](./Identity.md)
 - [Tokenomics](./Tokenomics.md)
 - [Architecture](./Architecture.md)
+- [Orchestration](./Orchestration.md)
 - [Use Cases](./UseCases.md)
 
 #### Audience
