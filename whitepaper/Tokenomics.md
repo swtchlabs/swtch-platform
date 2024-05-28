@@ -51,8 +51,8 @@ A WorkOrder is a structured record that details the type of service provided, th
   - Definition: The timestamp when the WorkOrder was created.
   - Type: DateTime.
 - Signature
-- Definition: A digital signature of the operator, verifying the authenticity and accuracy of the WorkOrder.
-- Type: String (digital signature).
+  - Definition: A digital signature of the operator, verifying the authenticity and accuracy of the WorkOrder.
+  - Type: String (digital signature).
 
 #### WorkOrder Submission
 The final WorkOrder, after all workloads are completed, should be submitted to the protocol for fee distribution.
