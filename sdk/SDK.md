@@ -2,7 +2,7 @@
 
 ## 1. Introduction
 #### 1.1 Purpose
-This SDK specification provides detailed guidelines for building an SDK to interface with the SWTCH Protocol smart contract. The SDK will support Rust, Python, Go, and TypeScript, allowing developers to interact with the protocol by creating and managing smart contract instances and calling their methods.
+This SDK specification provides detailed guidelines for building an SDK to interface with the SWTCH Protocol smart contracts. The SDK will support Rust, Python, Go, and TypeScript, allowing developers to interact with the protocol by creating and managing smart contract instances and calling their methods.
 
 #### 1.2 Scope
 The document covers:
@@ -17,6 +17,7 @@ This specification is intended for developers building the SDK and those integra
 
 ## 2. SDK Architecture
 #### 2.1 Core Components
+- Protocol Manager
 - Identity Manager
 - Network Manager
 - Secrets Manager
@@ -142,15 +143,42 @@ main().catch(error => {
 });
 ```
 
-## 4. Core Functionalities
-#### 4.1 Identity Manager
+## 4. Core Protocol Responsibilities
+#### 4.1 Protocol Manager
+The Protocol Manager is responsible for managing core protocol functions such as submitting work and withdrawing rewards or fees.
+
+###### 4.1.1 Submit Work
+- Purpose: Allows identities to submit transactions that include payment channel transactions.
+- Function: Ensures work submissions are properly recorded and associated with the correct identities.
+- Functions:
+submitWork(uint256 identityId, string memory workDetails): Submits work for a specific identity.
+- Events:
+WorkSubmitted(uint256 indexed identityId, string workDetails)
+
+###### 4.1.2 Withdraw Rewards
+- Purpose: Enables users to withdraw earned rewards using an ERC-20 network token.
+- Function: Ensures the secure and accurate distribution of rewards based on contributions.
+- Functions:
+withdrawRewards(uint256 identityId, uint256 amount): Withdraws rewards for a specific identity.
+- Events:
+RewardsWithdrawn(uint256 indexed identityId, uint256 amount)
+
+###### 4.1.3 Withdraw Fees
+- Purpose: Facilitates the withdrawal of fees earned from providing data or services.
+- Function: Ensures proper accounting and distribution of earned fees.
+- Functions:
+withdrawFees(uint256 identityId, uint256 amount): Withdraws fees for a specific identity.
+- Events:
+FeesWithdrawn(uint256 indexed identityId, uint256 amount)
+
+#### 4.2 Identity Manager
 - Functions:
   - createIdentity(provider, owner): Creates a new identity.
   - registerIdentity(provider, identityId): Registers an existing identity.
   - updateIdentity(provider, identityId, newOwner): Updates an existing identity.
   - deleteIdentity(provider, identityId): Deletes an identity.
 
-#### 4.2 Network Manager
+#### 4.3 Network Manager
 - Functions:
   - createNetworkService(provider, owner, serviceName): Creates a new network service.
     - Requirement: Each network service creation requires an Identity or address registered with one of the registered identity providers.
@@ -158,7 +186,7 @@ main().catch(error => {
   - updateNetworkService(provider, serviceId, newServiceName): Updates an existing network service.
   - deleteNetworkService(provider, serviceId): Deletes a network service.
 
-#### 4.3 Secrets Manager
+#### 4.4 Secrets Manager
 - Functions:
   - createSecret(provider, owner, secretData): Creates a new secret.
     - Requirement: Each secret service creation requires an Identity or address registered with one of the registered identity providers.
@@ -166,7 +194,7 @@ main().catch(error => {
   - updateSecret(provider, secretId, newSecretData): Updates an existing secret.
   - deleteSecret(provider, secretId): Deletes a secret.
 
-#### 4.4 Payments Manager
+#### 4.5 Payments Manager
 - Functions:
   - createPaymentService(provider, owner, serviceType, user, amount): Creates a new payment service.
     - Requirement: Each payment service creation requires an Identity or address registered with one of the registered identity providers.
@@ -180,7 +208,7 @@ main().catch(error => {
   - updatePaymentChannel(provider, channelId, newAmount): Updates an existing payment channel.
   - deletePaymentChannel(provider, channelId): Deletes a payment channel.
 
-#### 4.5 Tokens Manager
+#### 4.6 Tokens Manager
 - Functions:
   - createToken(provider, name, symbol, decimals, initialSupply): Creates a new ERC-20 token.
     - Requirement: Each token service creation requires an Identity or address registered with one of the registered identity providers.
