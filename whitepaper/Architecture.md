@@ -7,8 +7,9 @@ The SWTCH Platform is organized across multiple logical contexts.
 
 - File Format 
 - Encryption Standards
-- SWTCH Protocol
-- Multi-Chain SDK
+- Multi-Chain Extensibility
+- Multi-Chain Protocol
+- Multi-Chain SDKs
 - Verifiable Proof of Service
 - Decentralized Network Infrastructure Components
 
@@ -97,6 +98,28 @@ SWTCH uses AES (Advanced Encryption Standard), ChaCha20, and XChaCha20 cryptogra
 - Key Size: 256 bits
 - Nonce Size: 192 bits
 - Usage: XChaCha20 extends ChaCha20 to support a larger nonce size, beneficial for applications requiring non-repeating nonces over a greater number of messages without frequent re-keying. This makes it suitable for high-volume applications or situations where unique nonces cannot be practically guaranteed. XChaCha20 is used in various cryptographic libraries and applications focused on privacy and security.
+
+## Multi-Chain Extensibility
+The purpose of the Multi-Chain Protocol and SDKs is to spur adoption of the protocol across many teams of developers, enabling seamless interaction with the SWTCH Protocol on various blockchain networks.
+
+## Multi-Chain Protocol
+The SWTCH Protocol is a comprehensive set of smart contracts designed to provide decentralized services and interactions. It is deployed on multiple EVM blockchains and will also be extended to other networks such as Cosmos and Solana.
+
+###### Contexts of the SWTCH Protocol
+- Protocol: A decentralized autonomous organization (DAO) that will eventually take on administrative roles, enabling community-driven governance and management of the protocol.
+- Identity: Incorporates ERC-725 and ERC-735 standards along with identity solutions like Civic and Polygon ID to provide a robust identity framework for secure and verifiable interactions.
+- Network: Focuses on the registration and management of network services, including messaging, storage, computation, and agent services. This context aims to provide a comprehensive infrastructure for decentralized applications.
+- Secrets: Decentralized secrets management to support network services, ensuring secure handling of sensitive information.
+- Payments: Facilitates the creation and management of payment channels, proof of funds, escrow services, and subscriptions, enabling seamless financial interactions within the network.
+- Token: Manages the creation and administration of various token standards (ERC-20, ERC-721, ERC-1155, ERC-404, ERC++), integrating them with identity for network services and information, enhancing utility and interoperability.
+
+## Multi-Chain SDKs
+The SWTCH SDKs are written in Rust, Python, TypeScript, and Go to allow users on these respective platforms to interact with the protocol without having any knowledge of blockchain. These SDKs enable developers to integrate the SWTCH Protocol into their applications seamlessly.
+
+#### Multi-Chain SDKs Key Points
+- Wallet Support: Provides support for wallet operations, enabling users to manage their identities and assets.
+- Smart Contract Interaction: The SDK can load a smart contract into context to execute transactions, making it easy for developers to interact with the protocol's smart contracts.
+- Multi-Language Support: Multi-Chain SDKs are deployed to multiple language targets (Rust, Python, TypeScript, and Go), ensuring broad accessibility and ease of integration for developers across different programming environments.
 
 ## Verifiable Proof of Service (VPoS)
 At SWTCH, we are proposing a new proof system to manage the state of services in payment channels, termed "Verifiable Proof of Service" (VPoS). VPoS enables decentralized service indexing and verification.
