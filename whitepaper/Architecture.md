@@ -160,8 +160,37 @@ Commit Proofs to SWTCH Protocol: Use the SWTCH SDK to submit proofs to the Servi
 - Service Indexing and Verification: Indexing allows efficient discovery and access, while verification ensures validity and trustworthiness.
 - Decentralized Settlement Layer: Handles transactions related to service access, facilitating payments, resource allocation, and other settlement processes.
 
-## SDKs for Integration
-Developer Tools: SDKs for Rust, Python, and TypeScript are available, allowing developers to seamlessly integrate the proposed system into existing applications.
-
 ## Overall Implications
 Verifiable Proof of Service is a comprehensive solution for managing decentralized services. By combining registration, verification, settlement, and developer tools, VPoS aims to enhance the overall ecosystem, providing transparency, security, and efficiency.
+
+## Decentralized Network Infrastructure Components
+SWTCH will provide the initial infrastructure projects by integrating the SDK into each node. This integration will ensure that each node is equipped to run the services for the SWTCH Platform.
+
+#### SWTCH Infrastructure Nodes
+###### Messaging Node 
+- Provides encrypted messaging services for a given network.
+- Ensures secure and private communication.
+
+###### Storage Node
+- Offers encrypted storage for file data and vector data.
+- Facilitates secure and reliable data storage.
+
+###### Compute Node
+- Delivers computation services with input and output capabilities.
+- Supports a variety of computational tasks within the network.
+
+###### AI Agent Node
+- Configurable context with input and output capabilities.
+- Facilitates Retrieval-Augmented Generation (RAG) and orchestrates a mixture of agents with domain expertise.
+
+###### RAG Node
+- Manages a configurable set of AI Agent Nodes.
+- Orchestrates the operation of multiple AI agents to handle complex tasks.
+- Uses an orchestration tool to efficiently manage and coordinate the AI Agent Nodes.
+
+#### SDK Integration
+The SDK-integrated services have built-in capabilities to:
+
+- Register their API with the SWTCH Protocol.
+- Start the services seamlessly.
+- Ensure all interactions and operations are secure and verifiable.
