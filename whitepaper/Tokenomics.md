@@ -85,3 +85,6 @@ The SWTCH governance model empowers token holders to influence the direction and
 - Post-Approval: Once a proposal is approved, the relevant protocol or platform component is upgraded in accordance with the approved changes. This ensures that the SWTCH Platform evolves in line with the collective decisions of its token holders.
 
 By enabling token-based voting, implementing a proof of funds mechanism, and establishing a clear process for proposal submission and implementation, the SWTCH governance model ensures a transparent, fair, and efficient decision-making process.
+
+## Citations
+- [Decentralized automomous organizations](https://ethereum.org/en/dao/)

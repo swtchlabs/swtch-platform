@@ -21,6 +21,6 @@ Decentralized identity solutions prioritize privacy while ensuring seamless inte
 DIDs on SWTCH are the primary form of identification on the platform for users and operators. A base identity can be created on SWTCH, or an existing identity can be imported from other decentralized providers to manage authentic and verifiable network interactions.
 
 ## Citations
-- https://www.w3.org/TR/did-core/
-- https://ethereum.org/en/decentralized-identity/
-- https://www.nasdaq.com/articles/what-are-decentralized-identifiers-did-and-how-will-they-boost-web3
+- [Decentralized Identifiers (DIDs) v1.0](https://www.w3.org/TR/did-core/)
+- [Decentralized identity](https://ethereum.org/en/decentralized-identity/)
+- [What are Decentralized Identifiers (DID), and How Will They Boost Web3?](https://www.nasdaq.com/articles/what-are-decentralized-identifiers-did-and-how-will-they-boost-web3)
