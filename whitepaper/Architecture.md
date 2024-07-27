@@ -15,7 +15,7 @@ The SWTCH Platform is organized across multiple logical contexts.
 
 ## Platform Architecture Diagram
 The SWTCH Platform Diagram 
-[INSERT HERE]
+![SWTCH](SWTCH_Platform_Architecture.png)
 
 ## File Format
 A new file structure and packaging format has been created to suit our decentralized network for file storage and sharing.
